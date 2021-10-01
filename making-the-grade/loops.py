@@ -19,7 +19,7 @@ def count_failed_students(student_scores):
 
     failed_students_count=0
     for score in student_scores:
-        if (score <= 40):
+        if score <= 40:
             failed_students_count+=1
 
     return failed_students_count
@@ -34,7 +34,7 @@ def above_threshold(student_scores, threshold):
 
     best_students=[]
     for score in student_scores:
-        if (score >= threshold):
+        if score >= threshold:
             best_students.append(score)
 
     return best_students
@@ -75,7 +75,7 @@ def perfect_score(student_info):
     :return: First [<student name>, 100] found OR "No perfect score."
     """
     for index, student in enumerate(student_info):
-        if (student_info[index][1] == 100):
+        if student[1] == 100:
             return student_info[index]
 
     return "No perfect score."
