@@ -5,10 +5,10 @@ def create_inventory(items):
     :return:  dict - the inventory dictionary.
     """
 
-    count_dict = dict()
+    count_dict = {}
 
     for item in items:
-        if (item in count_dict):
+        if item in count_dict:
             count_dict[item] += 1
         else:
             count_dict[item] = 1
@@ -27,7 +27,7 @@ def add_items(inventory, items):
     """
 
     for item in items:
-        if (item in inventory):
+        if item in inventory:
             inventory[item] += 1
         else:
             inventory[item] = 1
@@ -57,7 +57,7 @@ def remove_item(inventory, item):
     :return:  dict - updated inventory dictionary with item removed.
     """
 
-    if (item in inventory):
+    if item in inventory:
         inventory.pop(item)
     return inventory
 
@@ -68,8 +68,8 @@ def list_inventory(inventory):
     :param inventory: dict - an inventory dictionary.
     :return: list of tuples - list of key, value pairs from the inventory dictionary.
     """
-    list = []
+    inventory_list = []
     for item in inventory:
-        if (inventory[item] > 0):
-            list.append((item, inventory[item]))
-    return list
+        if inventory[item] > 0:
+            inventory_list.append((item, inventory[item]))
+    return inventory_list
